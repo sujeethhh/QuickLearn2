@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { ChevronRight, ChevronDown, Menu, X, ChevronLeft } from "lucide-react";
 import { useState } from "react";
@@ -47,43 +48,43 @@ export default function Headers({ onGetStartedClick }) {
   return (
     <>
       {/* Animated Professional Top Bar */}
-      <div className="hidden lg:block bg-gradient-to-r from-slate-50 to-blue-50/30 border-b border-slate-200/60 animate-in slide-in-from-top-2 duration-500">
-        <div className="max-w-7xl mx-auto flex justify-between items-center py-2.5 px-6">
-          <div className="flex items-center space-x-8 text-sm text-slate-600">
-            <span className="flex items-center gap-2.5 hover:text-blue-600 transition-all duration-300 cursor-pointer hover:scale-105 group bg-white/50 px-3 py-1.5 rounded-full hover:bg-white/80 hover:shadow-sm">
-              <span className="w-4 h-4 text-blue-600 group-hover:animate-bounce">📞</span>
+      <div className="hidden lg:block bg-[#0d6efd] border-b border-blue-700/60 animate-in slide-in-from-top-2 duration-100">
+        <div className="max-w-7xl mx-auto flex justify-between items-center py-2 px-6">
+          <div className="flex items-center space-x-8 text-sm text-white">
+            <span className="flex items-center gap-2.5 hover:text-blue-200 transition-all duration-300 cursor-pointer hover:scale-105 group bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 hover:shadow-sm">
+              <span className="w-4 h-4 text-white group-hover:animate-bounce">�</span>
               <span className="font-medium">+111 (564) 568 25</span>
             </span>
-            <span className="flex items-center gap-2.5 hover:text-blue-600 transition-all duration-300 cursor-pointer hover:scale-105 group bg-white/50 px-3 py-1.5 rounded-full hover:bg-white/80 hover:shadow-sm">
-              <span className="w-4 h-4 text-blue-600 group-hover:animate-bounce">✉️</span>
+            <span className="flex items-center gap-2.5 hover:text-blue-200 transition-all duration-300 cursor-pointer hover:scale-105 group bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 hover:shadow-sm">
+              <span className="w-4 h-4 text-white group-hover:animate-bounce">✉️</span>
               <span className="font-medium">info@quicklearn.com</span>
             </span>
           </div>
 
           <div className="flex items-center space-x-5">
-            <div className="flex items-center space-x-2 bg-white/50 px-3 py-1.5 rounded-full">
+            <div className="flex items-center space-x-2 bg-white/10 px-3 py-1.5 rounded-full">
 
-              <span className="text-xs text-slate-500 font-medium">Follow:</span>
+              <span className="text-xs text-white font-medium">Follow:</span>
               <a
                 href="https://www.facebook.com/quicklearnsystems#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaFacebookF href="https://x.com/quicklearnsys" className="w-3.5 h-3.5 text-slate-400 hover:text-blue-600 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
+                <FaFacebookF href="https://x.com/quicklearnsys" className="w-3.5 h-3.5 text-white hover:text-blue-200 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
               </a>
               <a
                 href="https://x.com/quicklearnsys"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaTwitter className="w-3.5 h-3.5 text-slate-400 hover:text-blue-400 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
+                <FaTwitter className="w-3.5 h-3.5 text-white hover:text-blue-200 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
               </a>
               <a
                 href="https://www.linkedin.com/in/quicklearn-systems-1494ba12a/?originalSubdomain=in"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedinIn className="w-3.5 h-3.5 text-slate-400 hover:text-blue-700 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
+                <FaLinkedinIn className="w-3.5 h-3.5 text-white hover:text-blue-200 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
               </a>
               <a
                 href="https://workspaceupdates.googleblog.com/2023/04/new-community-features-for-google-chat-and-an-update-currents%20.html"
@@ -92,95 +93,37 @@ export default function Headers({ onGetStartedClick }) {
               >
 
 
-                <FaYoutube className="w-3.5 h-3.5 text-slate-400 hover:text-red-600 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
+                <FaYoutube className="w-3.5 h-3.5 text-white hover:text-red-300 transition-all duration-300 cursor-pointer hover:scale-125 hover:-translate-y-1" />
 
               </a>
             </div>
 
-            <div className="h-5 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent animate-pulse"></div>
+            <div className="h-5 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent animate-pulse"></div>
 
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95 animate-in slide-in-from-top-4 duration-700">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
-          <Link href="/" className="flex items-center space-x-3">
-            {/* Animated QS Logo */}
-            <motion.div
-              className="relative w-10 h-10 flex items-center justify-center"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              whileHover={{
-                scale: 1.1,
-                rotate: 360,
-                transition: { duration: 0.6, ease: "easeInOut" }
-              }}
-            >
-              {/* Outer Circle with Gradient */}
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 shadow-lg"
-                animate={{
-                  boxShadow: [
-                    "0 4px 20px rgba(59, 130, 246, 0.3)",
-                    "0 8px 30px rgba(147, 51, 234, 0.4)",
-                    "0 4px 20px rgba(59, 130, 246, 0.3)"
-                  ]
-                }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-100 backdrop-blur-sm bg-white/95 animate-in slide-in-from-top-4 duration-700">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-10">
+          <Link href="/" className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105">
+            {/* QuickLearn Logo */}
+            <div className="relative h-12 flex items-center transition-transform duration-300 group-hover:scale-110">
+              <Image
+                src="/LOGO.png"
+                alt="QuickLearn Systems Logo"
+                width={120}
+                height={48}
+                className="object-contain h-12 w-auto"
+                priority
               />
-
-              {/* Inner QS Text */}
-              <motion.div
-                className="relative z-10 text-white font-bold text-sm tracking-tight"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                whileHover={{
-                  textShadow: "0 0 10px rgba(255,255,255,0.8)",
-                  transition: { duration: 0.3 }
-                }}
-              >
-                QS
-              </motion.div>
-
-              {/* Rotating Ring Animation */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-white/30"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              />
-
-              {/* Pulsing Dot */}
-              <motion.div
-                className="absolute top-1 right-1 w-2 h-2 bg-yellow-400 rounded-full"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [1, 0.7, 1]
-                }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </motion.div>
+            </div>
 
             {/* QuickLearn Text - Professional */}
-            <motion.span
-              className="text-2xl sm:text-2xl md:text-3xl font-semibold text-slate-800 tracking-tight"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.1,
-                ease: "easeOut"
-              }}
-              whileHover={{
-                color: "#3b82f6",
-                transition: { duration: 0.2 }
-              }}
-            >
-              QuickLearn
-            </motion.span>
+            <span className="text-2xl sm:text-2xl md:text-3xl font-semibold text-slate-800 tracking-tight transition-all duration-300 group-hover:text-blue-600">
+              QuickLearn Systems
+            </span>
 
             {/* Clean Underline Effect */}
             <motion.div
