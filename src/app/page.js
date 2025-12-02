@@ -1,3 +1,4 @@
+import Grid from "@mui/material/Grid";
 import Header from "@/components/Header";     // Client Component
 import Hero from "@/components/Hero";         // Client Component
 import Footer from "@/components/Footer";     // Server Component
@@ -35,15 +36,26 @@ export default async function HomePage() {
 
 
   return (
-    <>
-      <ClientHomeWrapper />
-      <Testimonials testimonials={fixedTestimonials} />
-      <Clients clients={fixedclients} />
+    <Grid container direction="column" spacing={0}>
+      <Grid item xs={12}>
+        <ClientHomeWrapper />
+      </Grid>
+      
+      <Grid item xs={12}>
+        <Testimonials testimonials={fixedTestimonials} />
+      </Grid>
+      
+      <Grid item xs={12}>
+        <Clients clients={fixedclients} />
+      </Grid>
 
-
-
-      <Footer />
-      <LiveChat />
-    </>
+      <Grid item xs={12}>
+        <Footer />
+      </Grid>
+      
+      <Grid item xs={12}>
+        <LiveChat />
+      </Grid>
+    </Grid>
   );
 }

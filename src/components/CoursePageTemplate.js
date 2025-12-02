@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Grid from "@mui/material/Grid";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollFloat from "@/components/ui/ScroolReveal";
 import Link from "next/link";
@@ -173,14 +174,14 @@ export default function CoursePageTemplate({ courseData }) {
       {/* Main Content */}
       <section className="w-full bg-white px-4 md:px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <motion.div
-              className="lg:col-span-8"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerTextVariants}
-            >
+          <Grid container spacing={3} alignItems="flex-start">
+            <Grid item xs={12} lg={8}>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerTextVariants}
+              >
               <motion.h2
                 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 relative"
                 variants={headingVariants}
@@ -206,15 +207,17 @@ export default function CoursePageTemplate({ courseData }) {
                   {paragraph}
                 </motion.p>
               ))}
-            </motion.div>
+              </motion.div>
+            </Grid>
 
-            <motion.div
-              className="lg:col-span-4 sticky top-24"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={imageVariants}
-            >
+            <Grid item xs={12} lg={4}>
+              <motion.div
+                className="sticky top-24"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={imageVariants}
+              >
               <motion.img
                 src="/corporate.jpg"
                 alt="Corporate Training"
@@ -243,22 +246,23 @@ export default function CoursePageTemplate({ courseData }) {
                   Check Schedule
                 </motion.button>
               </Link>
-            </motion.div>
-          </div>
+              </motion.div>
+            </Grid>
+          </Grid>
         </div>
       </section>
 
       {/* Course Details Section */}
       <section className="w-full bg-gradient-to-br from-stone-50 via-slate-50 to-gray-50 py-12 px-4 md:px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <motion.div
-              className="lg:col-span-8"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerTextVariants}
-            >
+          <Grid container spacing={3} alignItems="flex-start">
+            <Grid item xs={12} lg={8}>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerTextVariants}
+              >
               {/* Course Outline */}
               <motion.h2
                 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 relative"
@@ -398,15 +402,17 @@ export default function CoursePageTemplate({ courseData }) {
                   </motion.li>
                 ))}
               </motion.ul>
-            </motion.div>
+              </motion.div>
+            </Grid>
 
-            <motion.div
-              className="lg:col-span-4 sticky top-24"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={imageVariants}
-            >
+            <Grid item xs={12} lg={4}>
+              <motion.div
+                className="sticky top-24"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={imageVariants}
+              >
               <motion.img
                 src="/team.jpg"
                 alt="Our Team"
@@ -426,8 +432,9 @@ export default function CoursePageTemplate({ courseData }) {
                   <div className="text-xs text-slate-600 font-medium">{courseData.tagline}</div>
                 </div>
               </motion.div>
-            </motion.div>
-          </div>
+              </motion.div>
+            </Grid>
+          </Grid>
         </div>
       </section>
 
@@ -447,16 +454,16 @@ export default function CoursePageTemplate({ courseData }) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Grid container spacing={3}>
             {courseData.relatedCourses.map((course, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
+              <Grid item xs={12} sm={6} lg={4} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full"
+                >
                 <div className="relative h-48 overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center transform hover:scale-110 transition-transform duration-700"
@@ -491,9 +498,10 @@ export default function CoursePageTemplate({ courseData }) {
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+                </motion.div>
+              </Grid>
             ))}
-          </div>
+          </Grid>
         </div>
       </section>
     </>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Grid from "@mui/material/Grid";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Search, BookOpen, Users, Clock, Star, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -1017,31 +1018,34 @@ export default function CoursesWeOffer() {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6">
-
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
-        >
+        <Grid container spacing={3} direction="column">
+          {/* Header */}
+          <Grid item xs={12}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12 sm:mb-16"
+            >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">
             Professional <span className="bg-gradient-to-r from-gray-600 via-gray-700 to-slate-800 bg-clip-text text-transparent">Courses</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Advance your career with industry-leading certifications and expert-led training programs
           </p>
-        </motion.div>
+            </motion.div>
+          </Grid>
 
-        {/* Search Control and Auto-scroll Status */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center gap-4 mb-8 sm:mb-12"
-        >
+          {/* Search Control and Auto-scroll Status */}
+          <Grid item xs={12}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col items-center gap-4 mb-8 sm:mb-12"
+            >
           <div className="relative w-full max-w-md">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
             <input
@@ -1075,16 +1079,18 @@ export default function CoursesWeOffer() {
               </motion.button>
             )}
           </div>
-        </motion.div>
+            </motion.div>
+          </Grid>
 
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-4"
-        >
+          {/* Category Filter */}
+          <Grid item xs={12}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-4"
+            >
           {categories.map((category) => (
             <button
               key={category}
@@ -1097,16 +1103,18 @@ export default function CoursesWeOffer() {
               {category}
             </button>
           ))}
-        </motion.div>
+            </motion.div>
+          </Grid>
 
-        {/* Auto-scrolling Course Container with Navigation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
+          {/* Auto-scrolling Course Container with Navigation */}
+          <Grid item xs={12}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
           {/* Left Arrow */}
           <motion.button
             onClick={scrollLeft}
@@ -1218,15 +1226,17 @@ export default function CoursesWeOffer() {
               ))}
             </div>
           </div>
-        </motion.div>
+            </motion.div>
+          </Grid>
 
-        {/* No Results */}
-        {filteredCourses.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center py-16"
-          >
+          {/* No Results */}
+          {filteredCourses.length === 0 && (
+            <Grid item xs={12}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center py-16"
+              >
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">No courses found</h3>
             <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
@@ -1239,11 +1249,13 @@ export default function CoursesWeOffer() {
             >
               Show All Courses
             </button>
-          </motion.div>
-        )}
+              </motion.div>
+            </Grid>
+          )}
 
-        {/* Call to Action */}
+          {/* Call to Action */}
 
+        </Grid>
       </div>
     </section>
   );
