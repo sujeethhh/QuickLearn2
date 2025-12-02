@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Grid from "@mui/material/Grid";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGooglePlusG } from "react-icons/fa";
 import { FaPaypal, FaUniversity } from "react-icons/fa";
 import { SiVisa, SiMastercard } from "react-icons/si";
@@ -37,10 +38,10 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+        <Grid container spacing={{ xs: 3, sm: 4, lg: 5 }}>
           
           {/* Popular Courses */}
-          <div className="lg:col-span-1">
+          <Grid item xs={12} sm={6} lg={3}>
             <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Popular Courses</h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
@@ -89,10 +90,10 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </Grid>
 
           {/* Find us on & Payment Options */}
-          <div className="lg:col-span-1">
+          <Grid item xs={12} sm={6} lg={3}>
             {/* Social Media */}
             <div className="mb-6 sm:mb-8">
               <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Find us on</h3>
@@ -154,10 +155,10 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          </Grid>
 
           {/* Company */}
-          <div className="lg:col-span-1">
+          <Grid item xs={12} sm={6} lg={3}>
             <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Company</h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
@@ -182,14 +183,15 @@ export default function Footer() {
               </li>
               
             </ul>
-          </div>
+          </Grid>
 
           {/* Quick Enquiry */}
-          <div className="lg:col-span-1">
+          <Grid item xs={12} sm={6} lg={3}>
             <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Quick Enquiry</h3>
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <input
+              <Grid container spacing={1.5}>
+                <Grid item xs={12} sm={6}>
+                  <input
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -197,17 +199,20 @@ export default function Footer() {
                   onChange={handleInputChange}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                   required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                  required
-                />
-              </div>
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    required
+                  />
+                </Grid>
+              </Grid>
               <input
                 type="tel"
                 name="mobile"
@@ -233,15 +238,19 @@ export default function Footer() {
                 Submit
               </button>
             </form>
-          </div>
-        </div>
+          </Grid>
+        </Grid>
 
         {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm">
-            © 2018-2019 - QuickLearn Systems. All Rights Reserved. The certification names are thetrademarks oftheir respective owners.
-          </p>
-        </div>
+        <Grid container>
+          <Grid item xs={12}>
+            <div className="border-t border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
+              <p className="text-gray-400 text-xs sm:text-sm">
+                © 2018-2019 - QuickLearn Systems. All Rights Reserved. The certification names are thetrademarks oftheir respective owners.
+              </p>
+            </div>
+          </Grid>
+        </Grid>
       </div>
     </footer>
   );
